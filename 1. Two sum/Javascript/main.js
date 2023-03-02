@@ -12,4 +12,8 @@ var twoSum = function(nums, target) {
 
     }
 
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 1258a7131e8877ef8766450a4ee87b77e616ee52
