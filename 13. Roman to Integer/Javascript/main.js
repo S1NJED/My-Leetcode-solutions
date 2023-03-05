@@ -2,7 +2,6 @@
  * @param {string} s
  * @return {number}
  */
-
 var romanToInt = function(s) {
     let romanNumerals = {
         "I": 1,
@@ -15,25 +14,19 @@ var romanToInt = function(s) {
     }
     let result = 0;
 
-    for (let index = 0; index < s.length; index++) {
-        let symbol = s[index];
-        let previousNumeral = romanNumerals[ s[index - 1] ];
-        let currentNumeral = romanNumerals[symbol];
+    for (let index = 0; index <= s.length - 1; index++) {
+        let currentRomanNumeral = romanNumerals[s[index]];
 
-        if (currentNumeral > previousNumeral) {
-            result -= previousNumeral;
-            result += (currentNumeral - previousNumeral);
+        if (romanNumerals[s[index + 1]] > currentRomanNumeral) {
+            result -= currentRomanNumeral;
         }
         else {
-            result += currentNumeral;
+            result += currentRomanNumeral;
         }
-
-        console.log(index, symbol, currentNumeral, result);
     }
 
     return result;
-
 };
 
-let string = "MCMXCIV";
-console.log(romanToInt(string));
+let roman = "MCMXCIV";
+console.log(romanToInt(roman));
